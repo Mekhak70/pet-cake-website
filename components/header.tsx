@@ -29,7 +29,7 @@ export function Header() {
             {/* <Cake className="h-5 w-5 text-primary-foreground" /> */}
             <Image src={Logo} alt=""/>
           </div>
-          <span className="text-xl font-bold text-primary">Pawfect Cakes</span>
+          <span className="text-xl font-bold text-primary">Chupaboo</span>
         </Link>
 
         {/* Desktop Navigation */}

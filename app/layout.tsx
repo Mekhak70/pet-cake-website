@@ -11,27 +11,40 @@ import { CartProvider } from "@/components/cart-provider"
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "600", "700", "800"] })
 
 export const metadata: Metadata = {
-  title: "Pawfect Cakes | Delicious Cakes for Your Beloved Pets",
-  description: "Handmade, pet-safe cakes for dogs and cats. Treat your furry friends with love!",
-  generator: "v0.app",
+  title: "Chupaboo",
+  description: "Chupaboo makes pet-safe cakes and treats for birthdays and special occasions.",
   icons: {
     icon: [
+      { url: "/logo-1.png" },
+      { url: "/logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: ["/logo-1.png"],
+  },
+  openGraph: {
+    title: "Chupaboo",
+    description: "Chupaboo makes pet-safe cakes and treats for birthdays and special occasions.",
+    url: "https://www.chupaboo.com/",
+    siteName: "Chupaboo",
+    images: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/logo-1.png",
+        width: 1200,
+        height: 630,
+        alt: "Chupaboo Preview",
       },
     ],
-    apple: "/apple-icon.png",
+    locale: "en_US",
+    type: "website",
   },
-}
+  twitter: {
+    card: "summary_large_image",
+    title: "Chupaboo",
+    description: "Chupaboo makes pet-safe cakes and treats for birthdays and special occasions.",
+    images: ["/logo-1.png"],
+  },
+};
 
 export default function RootLayout({
   children,
