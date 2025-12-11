@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { Facebook, Instagram, Cake } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
-import Logo from '@/public/logo.png'
+import Logo from '@/public/main-logo.png'
 import Image from "next/image"
 
 export function Footer() {

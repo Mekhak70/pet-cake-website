@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { CartSheet } from "@/components/cart-sheet"
-import Logo from '@/public/logo.png'
+import Logo from '@/public/main-logo.png'
 import Image from "next/image"
 
 export function Header() {
