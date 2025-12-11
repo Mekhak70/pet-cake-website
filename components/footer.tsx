@@ -1,10 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import { Facebook, Instagram, Cake } from "lucide-react"
+import { Instagram } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import Logo from '@/public/main-logo.png'
 import Image from "next/image"
+import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa"
 
 export function Footer() {
   const { t } = useLanguage()
@@ -24,7 +25,7 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primery">
-                <Image src={Logo} alt="" />
+                <Image src={Logo} alt="Chupaboo Logo" />
               </div>
               <span className="text-xl font-bold">
                 Chupaboo
@@ -53,15 +54,6 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="text-lg font-semibold">{t("followUs")}</h3>
             <div className="flex gap-4">
-              {/* <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-colors hover:bg-secondary/80"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a> */}
               <a
                 href="https://www.instagram.com/chupabooo/"
                 target="_blank"
@@ -70,6 +62,26 @@ export function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
+              </a>
+
+              <a
+                href="https://wa.me/37433775750"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-colors hover:bg-secondary/80"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp className="h-5 w-5" />
+              </a>
+
+              <a
+                href="https://t.me/+37433775750"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-colors hover:bg-secondary/80"
+                aria-label="Telegram"
+              >
+                <FaTelegramPlane className="h-5 w-5" />
               </a>
             </div>
           </div>

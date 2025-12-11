@@ -94,7 +94,7 @@ export function CartSheet() {
               </div>
             </div>
 
-            <div className="border-t border-border pt-4">
+            <div className="border-t border-border p-4">
               <div className="mb-4 flex items-center justify-between text-lg font-bold">
                 <span>{t("total")}</span>
                 <span>{formatPrice(totalPrice)}</span>

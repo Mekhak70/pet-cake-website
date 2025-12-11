@@ -106,9 +106,9 @@ export const translations: Translations = {
     ru: "За сколько дней нужно заказывать?",
   },
   faqOrderAdvanceAnswer: {
-    hy: "Առաջարկում ենք պատվիրել առնվազն 3-5 օր առաջ ստանդարտ տորթերի համար և 1-2 շաբաթ առաջ անհատական տորթերի համար։",
-    en: "We recommend ordering at least 3-5 days in advance for standard cakes, and 1-2 weeks for custom designs.",
-    ru: "Рекомендуем заказывать за 3-5 дней для стандартных тортов и за 1-2 недели для индивидуальных.",
+    hy: "Առաջարկում ենք պատվիրել առնվազն 1-2 օր առաջ ստանդարտ տորթերի համար և 2-3 օր առաջ անհատական տորթերի համար։",
+    en: "We recommend ordering at least 1-2 days in advance for standard cakes, and 2-3 days for custom designs.",
+    ru: "Рекомендуем заказывать за 1-2 дней для стандартных тортов и за 2-3 дней для индивидуальных.",
   },
   faqSafe: {
     hy: "Ձեր տորթերը անվտանգ են բոլոր կենդանիների համար՞։",
@@ -120,7 +120,17 @@ export const translations: Translations = {
     en: "Our cakes are made with vet-approved ingredients safe for most dogs and cats. If your pet has allergies, please let us know and we'll accommodate.",
     ru: "Наши торты сделаны из ингредиентов, одобренных ветеринарами, безопасных для большинства собак и кошек.",
   },
-
+  faqDelivery: {
+    hy: "Կա՞ անվճար առաքում և ինչպե՞ս է կազմակերպվում։",
+    en: "Is delivery free and how is it arranged?",
+    ru: "Есть ли бесплатная доставка и как она организована?",
+  },
+  faqDeliveryAnswer: {
+    hy: "Այո՛, Երևան քաղաքում առաքումը անվճար է։ Մարզերում առաքման գինը կախված է հեռավորությունից։",
+    en: "Yes, delivery is free in the city of Yerevan! In regional areas, the delivery price depends on the distance.",
+    ru: "Да, доставка в городе Ереван бесплатная! В регионах стоимость доставки зависит от расстояния.",    
+  },  
+  
   // Footer
   followUs: { hy: "Հետևեք մեզ", en: "Follow Us", ru: "Подписывайтесь" },
   allRightsReserved: {

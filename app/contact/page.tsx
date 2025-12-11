@@ -1,14 +1,13 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import React, { useState } from "react"
+import { Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useLanguage } from "@/components/language-provider"
+import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa"
 
 export default function ContactPage() {
   const { t } = useLanguage()
@@ -24,11 +23,15 @@ export default function ContactPage() {
   }
 
   const contactInfo = [
-    { icon: MapPin, label: t("address"), value: "123 Pet Street, Bakery Town, BK 12345" },
-    { icon: Phone, label: t("phone"), value: "+374 (33) 775750" },
-    { icon: Mail, label: t("email"), value: "mychupaboo@gmail.com" },
-    { icon: Clock, label: t("hours"), value: "Mon-Sat: 9am - 6pm" },
+    { icon: Phone, label: t("phone"), value: "+37433775750", type: "phone" },
+    { icon: Mail, label: t("email"), value: "mychupaboo@gmail.com", type: "email" },
   ]
+
+  const socialLinks = [
+    { icon: FaWhatsapp, label: "WhatsApp", value: "+37433775750", type: "whatsapp" },
+    { icon: FaTelegramPlane, label: "Telegram", value: "+37433775750", type: "telegram" },
+  ]
+
 
   return (
     <div className="flex flex-col">
@@ -88,56 +91,53 @@ export default function ContactPage() {
               )}
             </div>
 
-            {/* Contact Info */}
+            {/* Contact Info & Social */}
             <div className="flex flex-col gap-8">
               <div>
                 <h2 className="mb-6 text-2xl font-bold text-foreground">{t("getInTouch")}</h2>
-                <div className="flex flex-col gap-6">
-                  {contactInfo.map((info, index) => {
-                    const isPhone = info.label === t("phone")
-                    const isEmail = info.label === t("email")
+                <div className="flex flex-col gap-4">
+                  {[...contactInfo, ...socialLinks].map((info, index) => {
+                    let href = "#"
+                    let target: string | undefined
+                    let rel: string | undefined
+
+                    switch (info.type) {
+                      case "phone":
+                        href = `tel:${info.value.replace(/[^+0-9]/g, "")}`
+                        break
+                      case "email":
+                        href = `mailto:${info.value}`
+                        break
+                      case "whatsapp":
+                        href = `https://wa.me/${info.value.replace(/[^0-9]/g, "")}`
+                        target = "_blank"
+                        rel = "noopener noreferrer"
+                        break
+                      case "telegram":
+                        href = `https://t.me/+${info.value.replace(/[^0-9]/g, "")}`
+                        target = "_blank"
+                        rel = "noopener noreferrer"
+                        break
+                    }
 
                     return (
-                      <div key={index} className="flex items-start gap-4">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary">
-                          <info.icon className="h-5 w-5 text-primary-foreground" />
+                      <a
+                        key={index}
+                        href={href}
+                        target={target}
+                        rel={rel}
+                        className="flex items-center gap-4 rounded-lg  p-4 transition-colors hover:bg-primary/10 no-underline"
+                      >
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                          <info.icon className="h-5 w-5" />
                         </div>
-
-                        <div>
+                        <div className="flex flex-col">
                           <h3 className="font-semibold text-foreground">{info.label}</h3>
-
-                          {isPhone ? (
-                            <a
-                              href={`tel:${info.value.replace(/[^+0-9]/g, "")}`}
-                              className="text-primary hover:underline"
-                            >
-                              {info.value}
-                            </a>
-                          ) : isEmail ? (
-                            <a
-                              href={`mailto:${info.value}`}
-                              className="text-primary hover:underline"
-                            >
-                              {info.value}
-                            </a>
-                          ) : (
-                            <p className="text-muted-foreground">{info.value}</p>
-                          )}
+                          <p className="text-primary">{info.value}</p>
                         </div>
-                      </div>
+                      </a>
                     )
                   })}
-
-                </div>
-              </div>
-
-              {/* Map Placeholder */}
-              <div className="overflow-hidden rounded-xl bg-muted">
-                <div className="flex h-64 items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="mx-auto mb-2 h-8 w-8" />
-                    <p>{t("mapComingSoon")}</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -157,6 +157,10 @@ export default function ContactPage() {
             <div className="rounded-xl bg-card p-6 shadow-sm">
               <h3 className="mb-2 font-bold text-card-foreground">{t("faqOrderAdvance")}</h3>
               <p className="text-muted-foreground">{t("faqOrderAdvanceAnswer")}</p>
+            </div>
+            <div className="rounded-xl bg-card p-6 shadow-sm">
+              <h3 className="mb-2 font-bold text-card-foreground">{t("faqDelivery")}</h3>
+              <p className="text-muted-foreground">{t("faqDeliveryAnswer")}</p>
             </div>
             <div className="rounded-xl bg-card p-6 shadow-sm">
               <h3 className="mb-2 font-bold text-card-foreground">{t("faqSafe")}</h3>
