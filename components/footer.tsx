@@ -1,0 +1,82 @@
+"use client"
+
+import Link from "next/link"
+import { Facebook, Instagram, Cake } from "lucide-react"
+import { useLanguage } from "@/components/language-provider"
+import Logo from '@/public/logo.png'
+import Image from "next/image"
+
+export function Footer() {
+  const { t } = useLanguage()
+
+  const navItems = [
+    { href: "/", label: t("home") },
+    { href: "/about", label: t("about") },
+    { href: "/shop", label: t("shop") },
+    { href: "/contact", label: t("contact") },
+  ]
+
+  return (
+    <footer className="border-t border-border bg-primary text-primary-foreground">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid gap-8 md:grid-cols-3">
+          {/* Brand */}
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primery">
+              <Image src={Logo} alt=""/>
+              </div>
+              <span className="text-xl font-bold">Pawfect Cakes</span>
+            </Link>
+            <p className="text-sm text-primary-foreground/80">{t("heroSubtext")}</p>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex flex-col gap-4">
+            <h3 className="text-lg font-semibold">{t("home")}</h3>
+            <nav className="flex flex-col gap-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-primary-foreground/80 transition-colors hover:text-secondary"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex flex-col gap-4">
+            <h3 className="text-lg font-semibold">{t("followUs")}</h3>
+            <div className="flex gap-4">
+              {/* <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-colors hover:bg-secondary/80"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a> */}
+              <a
+                href="https://www.instagram.com/chupabooo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-colors hover:bg-secondary/80"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
+          © {new Date().getFullYear()} Pawfect Cakes. {t("allRightsReserved")}
+        </div>
+      </div>
+    </footer>
+  )
+}
