@@ -48,7 +48,11 @@ export default function AboutPage() {
             <div className="flex flex-col gap-6">
               <h2 className="text-3xl font-bold text-foreground md:text-4xl">{t("ourStory")}</h2>
               <div className="space-y-4 text-muted-foreground">
-              <p>{t("aboutDescription")}</p>
+                <p>{t("aboutDescription").split(/(?<=\.)\s+/)
+                  .filter(sentence => sentence.trim() !== "")
+                  .map((sentence, i) => (
+                    <p key={i}>{sentence.trim()}</p>
+                  ))}</p>
               </div>
               <Button asChild className="w-fit bg-secondary text-secondary-foreground hover:bg-secondary/90">
                 <Link href="/shop">{t("orderNow")}</Link>
