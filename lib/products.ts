@@ -4,7 +4,7 @@ export interface Product {
   description: string
   priceInCents: number
   image: any
-  category: "dog" | "cat" | "all"
+  category: "vegetable" | "fruit" |'meat' |"all"
 }
 import img1 from '@/public/01.png'
 import img2 from '@/public/02.png'
@@ -20,7 +20,7 @@ export const PRODUCTS: Product[] = [
     description: "A delicious peanut butter cake with yogurt frosting. Perfect for dogs who love peanut butter!",
     priceInCents: 2499,
     image: img5,
-    category: "dog",
+    category: "meat",
   },
   {
     id: "birthday-bone",
@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
     description: "Bone-shaped cake made with wholesome ingredients. Ideal for celebrating your dog's special day.",
     priceInCents: 2999,
     image: img2,
-    category: "dog",
+    category: "vegetable",
   },
   {
     id: "salmon-dream",
@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
       "Savory salmon-flavored cake that cats absolutely love. Made with real salmon and cat-safe ingredients.",
     priceInCents: 2799,
     image: img3,
-    category: "cat",
+    category: "fruit",
   },
   {
     id: "chicken-delight",
@@ -53,7 +53,7 @@ export const PRODUCTS: Product[] = [
     description: "Healthy carrot cake with apple and honey. A nutritious treat for your furry friend.",
     priceInCents: 2299,
     image: img1,
-    category: "dog",
+    category: "vegetable",
   },
   {
     id: "tuna-treat",
@@ -61,7 +61,7 @@ export const PRODUCTS: Product[] = [
     description: "Irresistible tuna-flavored mini cake perfect for cats. Made with premium tuna.",
     priceInCents: 2599,
     image: img6,
-    category: "cat",
+    category: "meat",
   },
 ]
 

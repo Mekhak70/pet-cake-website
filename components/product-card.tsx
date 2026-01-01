@@ -12,19 +12,19 @@ export function ProductCard({ product }: { product: Product }) {
   const { t } = useLanguage()
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl bg-card shadow-sm transition-shadow hover:shadow-md">
-      <div className="relative aspect-square overflow-hidden bg-muted">
+      <div className="relative aspect-square overflow-hidden bg-muted" style={{cursor:'pointer'}}>
         <Image
           src={product.image}
           alt={product.name}
           fill
-          className="object-cover transition-transform group-hover:scale-105"
+          className="object-cover transition-transform group-hover:scale-105 "
         />
 
-        <div className="absolute right-2 top-2 rounded-full bg-secondary px-3 py-1 text-sm font-semibold text-secondary-foreground">
+        {/* <div className="absolute right-2 top-2 rounded-full bg-secondary px-3 py-1 text-sm font-semibold text-secondary-foreground">
           {formatPrice(product.priceInCents)}
-        </div>
+        </div> */}
       </div>
-      <div className="flex flex-1 flex-col gap-3 p-4">
+      {/* <div className="flex flex-1 flex-col gap-3 p-4">
         <h3 className="text-lg font-bold text-card-foreground">{product.name}</h3>
         <p className="flex-1 text-sm text-muted-foreground">{product.description}</p>
         <Button
@@ -33,8 +33,8 @@ export function ProductCard({ product }: { product: Product }) {
         >
           <ShoppingCart className="mr-2 h-4 w-4" />
           {t("addToCart")}
-        </Button>
-      </div>
+        </Button> 
+      </div>*/}
     </div>
   )
 }

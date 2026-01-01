@@ -54,16 +54,16 @@ export default function AboutPage() {
                     <p key={i}>{sentence.trim()}</p>
                   ))}</p>
               </div>
-              <Button asChild className="w-fit bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              {/* <Button asChild className="w-fit bg-secondary text-secondary-foreground hover:bg-secondary/90">
                 <Link href="/shop">{t("orderNow")}</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="border-y border-border bg-primary py-16">
+      {/* <section className="border-y border-border bg-primary py-16">
         <div className="container mx-auto px-4">
           <div className="grid gap-8 md:grid-cols-3">
             {stats.map((stat, index) => (
@@ -77,7 +77,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Values Section */}
       <section className="py-16">

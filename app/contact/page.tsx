@@ -83,7 +83,8 @@ export default function ContactPage() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                    
+                    style={{backgroundColor: 'rgb(105, 66, 154)', color: '#fff'}}
                   >
                     {isSubmitting ? t("sending") : t("sendMessage")}
                   </Button>
@@ -128,7 +129,7 @@ export default function ContactPage() {
                         rel={rel}
                         className="flex items-center gap-4 rounded-lg  p-4 transition-colors hover:bg-primary/10 no-underline"
                       >
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full  text-primary-foreground" style={{backgroundColor:'#69429a'}}>
                           <info.icon className="h-5 w-5" />
                         </div>
                         <div className="flex flex-col">
