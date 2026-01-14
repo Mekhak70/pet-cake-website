@@ -9,6 +9,24 @@ import { Label } from "@/components/ui/label"
 import { useLanguage } from "@/components/language-provider"
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa"
 
+const TELEGRAM_BOT_TOKEN = "7393661607:AAGXNaQngrwuAG42xVJDz46M4uniHeeVU-o"
+const TELEGRAM_CHAT_ID = "8072053329"
+
+async function sendTelegramMessage(message: string) {
+  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
+  await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      chat_id: TELEGRAM_CHAT_ID,
+      text: message,
+      parse_mode: "HTML",
+    }),
+  })
+}
+
 export default function ContactPage() {
   const { t } = useLanguage()
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -17,9 +35,29 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const name = formData.get("name")
+    const email = formData.get("email")
+    const message = formData.get("message")
+
+    const telegramMessage = `
+<b>Նոր հաղորդագրություն կոնտակտային ձևից</b>
+Անուն: ${name}
+Էլ․հասցե: ${email}
+Հաղորդագրություն: ${message}
+    `
+
+    try {
+      await sendTelegramMessage(telegramMessage)
+      setIsSubmitted(true)
+    } catch (err) {
+      console.error(err)
+      alert("Ինչ-որ սխալ է տեղի ունեցել՝ փորձեք նորից")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -31,7 +69,6 @@ export default function ContactPage() {
     { icon: FaWhatsapp, label: "WhatsApp", value: "+37433775750", type: "whatsapp" },
     { icon: FaTelegramPlane, label: "Telegram", value: "+37433775750", type: "telegram" },
   ]
-
 
   return (
     <div className="flex flex-col">
@@ -83,8 +120,7 @@ export default function ContactPage() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    
-                    style={{backgroundColor: 'rgb(105, 66, 154)', color: '#fff'}}
+                    style={{ backgroundColor: "rgb(105, 66, 154)", color: "#fff" }}
                   >
                     {isSubmitting ? t("sending") : t("sendMessage")}
                   </Button>
@@ -127,9 +163,12 @@ export default function ContactPage() {
                         href={href}
                         target={target}
                         rel={rel}
-                        className="flex items-center gap-4 rounded-lg  p-4 transition-colors hover:bg-primary/10 no-underline"
+                        className="flex items-center gap-4 rounded-lg p-4 transition-colors hover:bg-primary/10 no-underline"
                       >
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full  text-primary-foreground" style={{backgroundColor:'#69429a'}}>
+                        <div
+                          className="flex h-12 w-12 items-center justify-center rounded-full text-primary-foreground"
+                          style={{ backgroundColor: "#69429a" }}
+                        >
                           <info.icon className="h-5 w-5" />
                         </div>
                         <div className="flex flex-col">

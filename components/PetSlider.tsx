@@ -7,10 +7,10 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const images = [
-  '/IMG_1255.PNG',
-  '/IMG_1257.JPG',
-  '/IMG_1267.PNG',
+const videos = [
+  { src: '/betik.mov', delay: 18000 },
+  { src: '/copy_8823C844-0841-4036-8E6E-9CBC9F0CE4E5.mov', delay: 22000 },
+  { src: '/Mona.mov', delay: 22000 },
 ];
 
 export default function PetSlider() {
@@ -20,31 +20,40 @@ export default function PetSlider() {
 
       <Swiper
         modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop
-        className="relative rounded-2xl"
+        className="relative rounded-2xl overflow-hidden"
       >
-        {images.map((src, i) => (
-          <SwiperSlide key={i}>
-            <Image
-              src={src}
-              alt="Pet cake"
-              width={370}
-              height={370}
-              className="
-              rounded-2xl
-              object-cover
-              scale-110        /* սկզբնական չափը 110% */
-              max-md:scale-100     /* միջին էկրանների համար բնական չափ */
-              max-sm:scale-90      /* փոքր էկրանների համար 90% */
-              transition-transform
-              duration-500
-              ease-in-out
-            "
-              priority={i === 0}
-            />
+
+        {videos.map((video, i) => (
+
+          <SwiperSlide key={i} data-swiper-autoplay={video.delay}>
+            <div className="w-full h-[620px] overflow-hidden flex items-center justify-center">
+              <video
+                src={video.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="
+                w-full
+                h-full
+                object-cover
+                scale-110
+                max-md:scale-100
+                max-sm:scale-90
+                transition-transform
+                duration-500
+                ease-in-out
+                rounded-2xl
+              "
+              />
+            </div>
           </SwiperSlide>
+
         ))}
+
       </Swiper>
     </div>
   );
