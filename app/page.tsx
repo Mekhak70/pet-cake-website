@@ -49,7 +49,6 @@ export default function HomePage() {
     { value: "fruit", label: t("fruitBased"), icon: Apple },
   ]
 
-
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -79,7 +78,6 @@ export default function HomePage() {
                 "
               priority
             />
-
 
             <div className="relative mx-auto aspect-square w-full max-w-md">
               <div className="absolute inset-0 rounded-full " />
@@ -146,16 +144,13 @@ export default function HomePage() {
 
           </div>
           <div className="max-w-4xl mx-auto px-4 text-center mb-12">
-  <h2 className="text-3xl font-bold mb-4" style={{ color: '#69429a' }}>
-    Ընտրիր տորթը՝ ըստ տեսքի և բաղադրության
-  </h2>
-  <p className="text-lg leading-relaxed text-gray-700">
-    Այստեղ ներկայացված են մեր տորթերի  տեսքերը: Դուք կարող եք ընտրել ցանկացած տեսք, որը ձեզ դուր է գալիս, և առաջարկել ձեր նախընտրած բաղադրությունը՝ ստանալով յուրահատուկ, անձնական տորթ ձեր սիրելի կենդանու համար:
-  </p>
-</div>
-
-
-
+            <h2 className="text-3xl font-bold mb-4" style={{ color: '#69429a' }}>
+              Ընտրիր տորթը՝ ըստ տեսքի և բաղադրության
+            </h2>
+            <p className="text-lg leading-relaxed text-gray-700">
+              Այստեղ ներկայացված են մեր տորթերի  տեսքերը: Դուք կարող եք ընտրել ցանկացած տեսք, որը ձեզ դուր է գալիս, և առաջարկել ձեր նախընտրած բաղադրությունը՝ ստանալով յուրահատուկ, անձնական տորթ ձեր սիրելի կենդանու համար:
+            </p>
+          </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
@@ -175,7 +170,6 @@ export default function HomePage() {
         </a>
       </div>
 
-      {/* Features Section */}
       <section className="border-y border-border bg-muted/30 py-16">
         <div className="container mx-auto px-4">
           <div className="grid gap-8 md:grid-cols-3" style={{ cursor: 'pointer' }}>

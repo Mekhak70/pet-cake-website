@@ -23,7 +23,7 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/10 py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
+            <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl" style={{color: '#69429a'}}>
               {t("aboutTitle")}
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">{t("aboutText")}</p>
@@ -46,7 +46,7 @@ export default function AboutPage() {
               />
             </div>
             <div className="flex flex-col gap-6">
-              <h2 className="text-3xl font-bold text-foreground md:text-4xl">{t("ourStory")}</h2>
+              <h2 className="text-3xl font-bold text-foreground md:text-4xl" style={{color:'#69429a'}}>{t("ourStory")}</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>{t("aboutDescription").split(/(?<=\.)\s+/)
                   .filter(sentence => sentence.trim() !== "")
@@ -82,18 +82,18 @@ export default function AboutPage() {
       {/* Values Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-foreground md:text-4xl">{t("ourValues")}</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold text-foreground md:text-4xl"  style={{color:'#69429a'}}>{t("ourValues")}</h2>
           <div className="grid gap-8 md:grid-cols-3">
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold text-card-foreground">{t("qualityFirst")}</h3>
+              <h3 className="mb-3 text-xl font-bold text-card-foreground" style={{color:'#69429a'}}>{t("qualityFirst")}</h3>
               <p className="text-muted-foreground">{t("qualityFirstDesc")}</p>
             </div>
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold text-card-foreground">{t("madeWithLove")}</h3>
+              <h3 className="mb-3 text-xl font-bold text-card-foreground" style={{color:'#69429a'}}>{t("madeWithLove")}</h3>
               <p className="text-muted-foreground">{t("madeWithLoveDesc")}</p>
             </div>
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold text-card-foreground">{t("petHappiness")}</h3>
+              <h3 className="mb-3 text-xl font-bold text-card-foreground" style={{color:'#69429a'}}>{t("petHappiness")}</h3>
               <p className="text-muted-foreground">{t("petHappinessDesc")}</p>
             </div>
           </div>

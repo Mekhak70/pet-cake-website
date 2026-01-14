@@ -76,7 +76,7 @@ export default function ContactPage() {
       <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/10 py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
+            <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl" style={{color:'#69429a'}}>
               {t("contactTitle")}
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">{t("contactText")}</p>
@@ -188,22 +188,22 @@ export default function ContactPage() {
       {/* FAQ Section */}
       <section className="border-t border-border bg-muted/30 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-foreground">{t("faq")}</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold text-foreground" style={{color:'#69429a'}}>{t("faq")}</h2>
           <div className="mx-auto max-w-3xl space-y-6">
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-2 font-bold text-card-foreground">{t("faqCustomDesign")}</h3>
+              <h3 className="mb-2 font-bold text-card-foreground" style={{color:'#69429a'}}>{t("faqCustomDesign")}</h3>
               <p className="text-muted-foreground">{t("faqCustomDesignAnswer")}</p>
             </div>
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-2 font-bold text-card-foreground">{t("faqOrderAdvance")}</h3>
+              <h3 className="mb-2 font-bold text-card-foreground" style={{color:'#69429a'}}>{t("faqOrderAdvance")}</h3>
               <p className="text-muted-foreground">{t("faqOrderAdvanceAnswer")}</p>
             </div>
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-2 font-bold text-card-foreground">{t("faqDelivery")}</h3>
+              <h3 className="mb-2 font-bold text-card-foreground" style={{color:'#69429a'}}>{t("faqDelivery")}</h3>
               <p className="text-muted-foreground">{t("faqDeliveryAnswer")}</p>
             </div>
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-2 font-bold text-card-foreground">{t("faqSafe")}</h3>
+              <h3 className="mb-2 font-bold text-card-foreground" style={{color:'#69429a'}}>{t("faqSafe")}</h3>
               <p className="text-muted-foreground">{t("faqSafeAnswer")}</p>
             </div>
           </div>
