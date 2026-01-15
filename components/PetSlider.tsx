@@ -40,22 +40,28 @@ export default function PetSlider() {
   "
   style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
 >
-  <video
-    src={video.src}
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-    className="
-      w-full
-      h-full
-      object-cover
-      scale-110
-      max-md:scale-100
-      max-sm:scale-100
-    "
-  />
+<video
+  src={video.src}
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  className="
+    w-full
+    h-full
+    object-cover
+    scale-110
+    max-md:scale-100
+    max-sm:scale-100
+    rounded-2xl
+  "
+  style={{
+    WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+    WebkitBorderRadius: '16px'
+  }}
+/>
+
 </div>
 </SwiperSlide>
 
