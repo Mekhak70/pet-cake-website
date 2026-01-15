@@ -28,43 +28,31 @@ export default function PetSlider() {
         {videos.map((video, i) => (
 
 <SwiperSlide key={i} data-swiper-autoplay={video.delay}>
-<div
-  className="
-    w-full
-    h-[620px]
-    overflow-hidden
-    rounded-2xl
-    flex
-    items-center
-    justify-center
-  "
-  style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
->
-<video
-  src={video.src}
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="metadata"
-  className="
-    w-full
-    h-full
-    object-cover
-    scale-110
-    max-md:scale-100
-    max-sm:scale-100
-    rounded-2xl
-  "
-  style={{
-    WebkitMaskImage: '-webkit-radial-gradient(white, black)',
-    WebkitBorderRadius: '16px'
-  }}
-/>
-
-</div>
+  <div
+    className="
+      w-full
+      h-[620px]
+      rounded-2xl
+      overflow-hidden
+    "
+    style={{
+      WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+    }}
+  >
+    {/* zoom container */}
+    <div className="w-full h-full scale-110 max-md:scale-100">
+      <video
+        src={video.src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
 </SwiperSlide>
-
 
         ))}
 

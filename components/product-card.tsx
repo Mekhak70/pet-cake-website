@@ -1,40 +1,36 @@
 "use client"
 
 import Image from "next/image"
-import { ShoppingCart } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useCart } from "@/components/cart-provider"
-import { useLanguage } from "@/components/language-provider"
-import { type Product, formatPrice } from "@/lib/products"
+import { useState } from "react"
+import { type Product } from "@/lib/products"
+import { log } from "console"
 
 export function ProductCard({ product }: { product: Product }) {
-  const { addItem } = useCart()
-  const { t } = useLanguage()
+  const [clickedImages, setClickedImages] = useState<string>('')
+
+  const handleClick = () => {
+    setClickedImages(product.image.id)
+  }
+
+
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl bg-card shadow-sm transition-shadow hover:shadow-md">
-      <div className="relative aspect-square overflow-hidden bg-muted" style={{cursor:'pointer'}}>
+    <div className="flex flex-col overflow-hidden rounded-xl bg-card shadow-sm">
+      <div 
+        className="relative aspect-square overflow-hidden bg-muted cursor-pointer"
+        onClick={handleClick}
+      >
         <Image
           src={product.image}
           alt={product.name}
           fill
-          className="object-cover transition-transform group-hover:scale-105 "
+          className="object-cover"
         />
 
-        {/* <div className="absolute right-2 top-2 rounded-full bg-secondary px-3 py-1 text-sm font-semibold text-secondary-foreground">
-          {formatPrice(product.priceInCents)}
-        </div> */}
+        {product.image.id === clickedImages && <div
+          className="absolute inset-0 transition-colors"
+          style={{ backgroundColor: 'rgba(0,0,0,0.75)'  }}
+        ></div>}
       </div>
-      {/* <div className="flex flex-1 flex-col gap-3 p-4">
-        <h3 className="text-lg font-bold text-card-foreground">{product.name}</h3>
-        <p className="flex-1 text-sm text-muted-foreground">{product.description}</p>
-        <Button
-          onClick={() => addItem(product)}
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-        >
-          <ShoppingCart className="mr-2 h-4 w-4" />
-          {t("addToCart")}
-        </Button> 
-      </div>*/}
     </div>
   )
 }
