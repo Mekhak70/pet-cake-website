@@ -19,8 +19,7 @@ export default function HomePage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [type, setType] = useState<string>("")
   const [creamType, setCreamType] = useState<string>("")
-console.log(type, 'type');
-console.log(creamType, 'creamType');
+
 
   const features = [
     { icon: Heart, title: t("handmade"), description: t("handmadeDesc") },

@@ -15,7 +15,7 @@ const videos = [
 
 export default function PetSlider() {
   return (
-    <div className="relative mx-auto w-full max-w-md" style={{ width: '370px', cursor: 'pointer' }}>
+    <div className="relative mx-auto w-full max-w-md" style={{ width: '365px', cursor: 'pointer' }}>
       <div className="absolute inset-0 rounded-full " />
 
       <Swiper
