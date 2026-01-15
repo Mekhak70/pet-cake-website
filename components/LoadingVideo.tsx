@@ -12,15 +12,13 @@ export default function LoadingVideo({ onFinish }: { onFinish: () => void }) {
   }, [onFinish])
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: '#7c4ba9' }}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: '#69429a' }}>
       <video
         src="/loading.mov"
         autoPlay
         muted
         playsInline
         className="w-full h-[50%] "
-        style={{  borderRadius: '50%' }}
-        
       />
     </div>
   )
