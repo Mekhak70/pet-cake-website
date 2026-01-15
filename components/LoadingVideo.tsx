@@ -14,7 +14,7 @@ export default function LoadingVideo({ onFinish }: { onFinish: () => void }) {
   return (
     <div
   className="fixed inset-0 z-50 flex items-center justify-center"
-  style={{ backgroundColor: "#7c4ba9" }}
+  style={{ backgroundColor: "#69429A" }}
 >
   {/* Wrapper, որը պահպանում է նույն ֆոնը */}
   <div className=" w-full h-[50%] flex items-center justify-center">
