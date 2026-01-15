@@ -6,7 +6,7 @@ export default function LoadingVideo({ onFinish }: { onFinish: () => void }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onFinish()
-    }, 5000)
+    }, 5300)
 
     return () => clearTimeout(timer)
   }, [onFinish])
