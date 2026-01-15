@@ -114,19 +114,75 @@ export const translations: Translations = {
     en: "It all started with a simple wish: to celebrate our own pets' birthdays with something truly special. When we couldn't find cakes that were both safe and delicious for our furry family members, we decided to create our own. Today, Chupaboo has grown from a home-kitchen passion project into a beloved bakery serving thousands of happy pets and their families. Every cake we make is crafted with the same love and care as that very first creation. Our dedicated team of bakers uses only vet-approved, human-grade ingredients to ensure every treat is as healthy as it is delicious. Because your pets deserve the very best.",
     ru: "Всё началось с простого желания — отметить дни рождения наших питомцев чем-то по-настоящему особенным. Когда мы не нашли торты, которые были бы одновременно безопасными и вкусными для наших пушистых членов семьи, мы решили создать их сами. Сегодня Chupaboo выросла из небольшого домашнего проекта в любимую пекарню, обслуживающую тысячи счастливых питомцев и их семьи. Каждый торт мы создаём с той же любовью и заботой, что и самый первый. Наша преданная команда пекарей использует только одобренные ветеринарами ингредиенты, пригодные для употребления человеком, чтобы каждый десерт был не только вкусным, но и полезным. Ведь ваши питомцы заслуживают самое лучшее."
   },
- messages : {
+  messages: {
     hy: "Ինչ-որ սխալ է տեղի ունեցել",
     ru: "Произошла ошибка",
     en: "Something went wrong",
   },
+  CREATEYOURPETSCAKE: {
+    hy: "ՍՏԵՂԾԻՐ ՔՈ ԿԵՆԴԱՆՈՒ ՏՈՐԹԸ",
+    ru: "СОЗДАЙ ТОРТ ДЛЯ СВОЕГО ПИТОМЦА",
+    en: "CREATE YOUR PET’S CAKE",
+  },
+  choosemaincake: {
+    hy: "Ընտրիր տորթի հիմնական բաղադրիչը",
+    ru: "Выбери основной ингредиент торта",
+    en: "Choose the main cake ingredient",
+  },
+  choosecream: {
+    hy: "Ընտրիր կրեմի տեսակը",
+    ru: "Выбери тип крема",
+    en: "Choose the type of cream",
+  },
+  chooseshape: {
+    hy: "Ընտրիր տորթի ձևը",
+    ru: "Выбери форму торта",
+    en: "Choose the cake shape",
+  },
+  MEAT: {
+    hy: "ՄԻՍ",
+    ru: "МЯСО",
+    en: "MEAT",
+  },
+  FRUIT: {
+    hy: "ՄՐԳ",
+    ru: "ФРУКТЫ",
+    en: "FRUIT",
+  },
+  VEGETABLES: {
+    hy: "ԲԱՆՋԱՐԵՂԵՆ",
+    ru: "ОВОЩИ",
+    en: "VEGETABLES",
+  },
+
+  DAIRY: {
+    hy: "ԿԱԹՆԱՅԻՆ",
+    ru: "МОЛОЧНЫЙ",
+    en: "DAIRY",
+  },
+  PLANTBASEDMILK: {
+    hy: "ԲՈՒՍԱԿԱՆ ԿԱԹ",
+    ru: "РАСТИТЕЛЬНОЕ МОЛОКО",
+    en: "PLANT-BASED MILK",
+  },
+  PLANTBASED: {
+    hy: "ԲՈՒՍԱԿԱՆ",
+    ru: "РАСТИТЕЛЬНЫЙ",
+    en: "PLANT-BASED",
+  },
+
+
+
+
+
 
   selected: {
     hy: "Ընտրված է",
     ru: "Выбрано",
     en: "Selected",
   },
-  
-  
+
+
   happyPets: { hy: "Ուրախ պահեր", en: "Happy Pets", ru: "Счастливых питомцев" },
   happyFamilies: { hy: "Շնորհավոր ընտանիքներ", en: "Happy Families", ru: "Счастливых семей" },
   ourValues: { hy: "Մեր արժեքները", en: "Our Values", ru: "Наши ценности" },
