@@ -18,10 +18,7 @@ export default function LoadingVideo({ onFinish }: { onFinish: () => void }) {
 >
   {/* Wrapper, որը պահպանում է նույն ֆոնը */}
   <div className="relative w-full h-[50%] flex items-center justify-center">
-    <div
-      className="absolute inset-0"
-      style={{ backgroundColor: "#7c4ba9" }}
-    ></div>
+   
 
     
     <video
