@@ -10,6 +10,7 @@ import MainImgAm from "@/public/home-arm.png"
 import MainImgRu from "@/public/home-rus.png"
 import MainImgEn from "@/public/home-eng.png"
 import PetSlider from "@/components/PetSlider"
+import Arrow from "@/public/arrow.png"
 
 type Filter = "all" | "meat" | "vegetable" | "fruit"
 
@@ -28,10 +29,12 @@ export default function HomePage() {
     filter === "all"
       ? PRODUCTS
       : PRODUCTS.filter(
-          (p) => p.category === filter || p.category === "all"
-        )
+        (p) => p.category === filter || p.category === "all"
+      )
 
   const handleSelectImage = (image: any) => {
+    console.log(image, "selected image");
+
     setSelectedImage(image.src)
   }
   const SITE_URL = "https://pet-cake-website.vercel.app"
@@ -58,8 +61,8 @@ export default function HomePage() {
                 language === "ru"
                   ? MainImgRu
                   : language === "en"
-                  ? MainImgEn
-                  : MainImgAm
+                    ? MainImgEn
+                    : MainImgAm
               }
               alt="Pet cake hero"
               width={1100}
@@ -95,19 +98,46 @@ export default function HomePage() {
       {/* PRODUCTS */}
       <section className="bg-white py-10">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-[#69429a]">
-              Ընտրիր տորթը՝ ըստ տեսքի և բաղադրության
+          <div className="max-w-4xl mx-auto text-center mb-2" style={{display:'flex', flexDirection:'column',justifyContent:'center', alignItems:'center'}}>
+            <h2 className="text-3xl font-bold mb-8 text-[#69429a]">
+              ՍՏԵՂԾԻՐ ՔՈ ԿԵՆԴԱՆՈՒ ՏՈՐԹԸ
             </h2>
-            <p className="text-lg text-gray-700">
-              Ընտրիր ցանկացած տեսք և մենք այն կպատրաստենք քո կենդանու համար։
+            <Image src={Arrow} alt="aroww" width={30} height={40} style={{padding:'0 0 2px 0'}}/>
+            <p className="text-lg text-[#69429a]">
+              Ընտրիր տորթի հիմնական բաղադրիչը
             </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', justifyContent: 'center', alignItems: 'center', paddingTop: '4px' }}>
+              <div style={{ display: 'flex', gap: '15px' }}>
+                <div style={{ padding: '10px 15px', background: '#ef4f27', borderRadius: '16px', fontSize: '20px', color: '#fff', cursor:'pointer' }}>ՄԻՍ</div>
+                <div style={{ padding: '10px 15px', background: '#f4a2c6', borderRadius: '16px', fontSize: '20px', color: '#fff',  cursor:'pointer' }}>ՄԻՐԳ</div>
+                <div style={{ padding: '10px 15px', background: '#aed137', borderRadius: '16px', fontSize: '20px', color: '#fff',  cursor:'pointer' }}>ԲԱՆՋԱՐԵՂԵՆ</div>
+              </div>
+              <Image src={Arrow} alt="aroww" width={30} height={40} style={{padding:'15px 0 2px 0'}}/>
+
+              <p className="text-lg text-[#69429a]">
+
+                Ընտրիր Կրեմի տեսակը
+              </p>
+              <div style={{ display: 'flex', gap: '15px' }}>
+                <div style={{ padding: '10px 15px', background: '#1e439b', borderRadius: '16px', fontSize: '20px', color: '#fff',  cursor:'pointer' }}>ԿԱԹՆԱՅԻՆ</div>
+                <div style={{ padding: '10px 15px', background: '#72bfe9', borderRadius: '16px', fontSize: '20px', color: '#fff', whiteSpace: 'nowrap',  cursor:'pointer' }}>ԲՈՒՍԱԿԱՆ ԿԱԹ</div>
+                <div style={{ padding: '10px 15px', background: '#008042', borderRadius: '16px', fontSize: '20px', color: '#fff', cursor:'pointer' }}>ԲՈՒՍԱԿԱՆ</div>
+
+              </div>
+              <Image src={Arrow} alt="aroww" width={30} height={40} style={{padding:'15px 0 2px 0'}}/>
+
+              <p className="text-lg text-[#69429a]">
+
+                Ընտրիր տորթի ձևը
+              </p>
+              
+            </div>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProducts.map((product) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" style={{paddingTop:'10px'}}>
+            {filteredProducts.map((product, index) => (
               <div
-                key={product.id}
+                key={index}
                 className="rounded-xl overflow-hidden shadow-sm"
               >
                 <div
@@ -122,8 +152,8 @@ export default function HomePage() {
                   />
 
                   {selectedImage === product.image.src && (
-                    <div className="absolute inset-0 bg-black/70 flex items-center justify-center text-white font-semibold">
-                      Ընտրված է
+                    <div className="absolute inset-0 bg-black/70 flex items-center justify-center text-white font-semibold" style={{ color: '#ffea00' }}>
+                      {t("selected")}
                     </div>
                   )}
                 </div>

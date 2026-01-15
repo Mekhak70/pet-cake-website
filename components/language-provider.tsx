@@ -120,7 +120,12 @@ export const translations: Translations = {
     en: "Something went wrong",
   },
 
-
+  selected: {
+    hy: "Ընտրված է",
+    ru: "Выбрано",
+    en: "Selected",
+  },
+  
   
   happyPets: { hy: "Ուրախ պահեր", en: "Happy Pets", ru: "Счастливых питомцев" },
   happyFamilies: { hy: "Շնորհավոր ընտանիքներ", en: "Happy Families", ru: "Счастливых семей" },
