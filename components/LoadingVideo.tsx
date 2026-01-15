@@ -17,16 +17,16 @@ export default function LoadingVideo({ onFinish }: { onFinish: () => void }) {
   style={{ backgroundColor: "#7c4ba9" }}
 >
   {/* Wrapper, որը պահպանում է նույն ֆոնը */}
-  <div className="relative w-full h-[50%] flex items-center justify-center">
+  <div className=" w-full h-[50%] flex items-center justify-center">
    
 
     
     <video
-      src="/loading.mp4"
+      src="/loading.MP4"
       autoPlay
       muted
       playsInline
-      className="relative w-auto h-full"
+      className=" w-auto h-full"
     />
   </div>
 </div>
