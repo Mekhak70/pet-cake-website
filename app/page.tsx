@@ -121,7 +121,8 @@ export default function HomePage() {
       </div>
 
 
-      <section className="py-16" >
+      <section  style={{ backgroundColor: '#fff', }}
+      >
         <div className="container mx-auto px-4">
           <div className="mb-8 flex flex-wrap justify-center gap-3">
             {/* {filters.map((f) => (
@@ -158,7 +159,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <div className="container mx-auto  md:py-10 text-center">
+      <div className="container mx-auto  py-10 text-center" style={{ backgroundColor: '#fff', }}      >
         <a
           href="https://wa.me/37433775750?text=Բարև,%20ուզում%20եմ%20պատվիրել"
           target="_blank"
@@ -166,11 +167,12 @@ export default function HomePage() {
           className="inline-flex items-center justify-center px-6 py-3  text-white font-semibold rounded-lg hover:bg-gray-800 transition"
           style={{ backgroundColor: '#69429a' }}
         >
-          Պատվիրել հիմա
+          {t("orderNow")}
         </a>
       </div>
 
-      <section className="border-y border-border bg-muted/30 py-16">
+      <section className="border-y border-border bg-muted/30 py-16" style={{ backgroundColor: '#fff' }}
+      >
         <div className="container mx-auto px-4">
           <div className="grid gap-8 md:grid-cols-3" style={{ cursor: 'pointer' }}>
             {features.map((feature, index) => (

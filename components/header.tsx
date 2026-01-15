@@ -27,7 +27,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src={Logo} alt="Chupaboo" width={230} priority />
+          <Image src={Logo} alt="Chupaboo" width={230} priority /> 
         </Link>
 
         {/* Desktop Navigation */}
@@ -62,7 +62,6 @@ export function Header() {
               </Link>
             )
           })}
-
           <LanguageSwitcher />
         </nav>
 
@@ -76,13 +75,13 @@ export function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {!isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      {isMenuOpen && (
+      {!isMenuOpen && (
         <div className="border-t border-border bg-background md:hidden">
           <nav className="container mx-auto flex flex-col gap-2 px-4 py-4">
             {navItems.map((item) => {

@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { Phone, Mail } from "lucide-react"
+import { Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -9,203 +9,180 @@ import { Label } from "@/components/ui/label"
 import { useLanguage } from "@/components/language-provider"
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa"
 
-const TELEGRAM_BOT_TOKEN = "7393661607:AAGXNaQngrwuAG42xVJDz46M4uniHeeVU-o"
-const TELEGRAM_CHAT_ID = "8072053329"
-
-async function sendTelegramMessage(message: string) {
-  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
-  await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      chat_id: TELEGRAM_CHAT_ID,
-      text: message,
-      parse_mode: "HTML",
-    }),
-  })
-}
-
 export default function ContactPage() {
   const { t } = useLanguage()
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const [name, setName] = useState("")
+  const [phone, setPhone] = useState("")
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    const onlyLetters = value.replace(/[^a-zA-Zա-ֆԱ-Ֆ\s]/g, "")
+    setName(onlyLetters)
+  }
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    const onlyNumbers = value.replace(/\D/g, "")
+    setPhone(onlyNumbers)
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    const form = e.currentTarget
-    const formData = new FormData(form)
-    const name = formData.get("name")
-    const email = formData.get("email")
-    const message = formData.get("message")
-
-    const telegramMessage = `
-<b>Նոր հաղորդագրություն կոնտակտային ձևից</b>
-Անուն: ${name}
-Էլ․հասցե: ${email}
-Հաղորդագրություն: ${message}
-    `
+    const payload = {
+      name,
+      phone,
+      message: (e.currentTarget.message as HTMLTextAreaElement).value,
+    }
 
     try {
-      await sendTelegramMessage(telegramMessage)
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+
+      if (!res.ok) throw new Error("Failed")
+
       setIsSubmitted(true)
+      setName("")
+      setPhone("")
+      e.currentTarget.reset()
     } catch (err) {
       console.error(err)
-      alert("Ինչ-որ սխալ է տեղի ունեցել՝ փորձեք նորից")
+      alert(t('messages'))
     } finally {
       setIsSubmitting(false)
     }
   }
 
   const contactInfo = [
-    { icon: Phone, label: t("phone"), value: "+37433775750", type: "phone" },
-    { icon: Mail, label: t("email"), value: "mychupaboo@gmail.com", type: "email" },
+    { icon: Phone, label: t("phone"), value: "033775750", type: "phone" },
   ]
 
   const socialLinks = [
-    { icon: FaWhatsapp, label: "WhatsApp", value: "+37433775750", type: "whatsapp" },
-    { icon: FaTelegramPlane, label: "Telegram", value: "+37433775750", type: "telegram" },
+    { icon: FaWhatsapp, label: "WhatsApp", value: "033775750", type: "whatsapp" },
+    { icon: FaTelegramPlane, label: "Telegram", value: "033775750", type: "telegram" },
   ]
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/10 py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl" style={{color:'#69429a'}}>
-              {t("contactTitle")}
-            </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">{t("contactText")}</p>
-          </div>
-        </div>
+      {/* HERO */}
+      <section className="py-16 text-center bg-gradient-to-br 
+from-primary/5 
+via-background 
+to-secondary/10
+">
+        <h1 className="text-4xl font-extrabold" style={{ color: "#69429a" }}>
+          {t("contactTitle")}
+        </h1>
+        <p className="mt-4 text-muted-foreground">{t("contactText")}</p>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* CONTENT */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-12 lg:grid-cols-2">
-            {/* Contact Form */}
-            <div className="rounded-xl bg-card p-6 shadow-sm md:p-8">
-              {isSubmitted ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-                    <svg className="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="mb-2 text-xl font-bold text-card-foreground">{t("messageSent")}</h3>
-                  <p className="text-muted-foreground">{t("messageSentDesc")}</p>
-                  <Button className="mt-6" onClick={() => setIsSubmitted(false)}>
-                    {t("sendAnother")}
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="name">{t("name")}</Label>
-                    <Input id="name" name="name" placeholder={t("name")} required />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="email">{t("email")}</Label>
-                    <Input id="email" name="email" type="email" placeholder="your@email.com" required />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="message">{t("message")}</Label>
-                    <Textarea id="message" name="message" placeholder={t("message")} rows={5} required />
-                  </div>
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    style={{ backgroundColor: "rgb(105, 66, 154)", color: "#fff" }}
-                  >
-                    {isSubmitting ? t("sending") : t("sendMessage")}
-                  </Button>
-                </form>
-              )}
-            </div>
-
-            {/* Contact Info & Social */}
-            <div className="flex flex-col gap-8">
-              <div>
-                <h2 className="mb-6 text-2xl font-bold text-foreground">{t("getInTouch")}</h2>
-                <div className="flex flex-col gap-4">
-                  {[...contactInfo, ...socialLinks].map((info, index) => {
-                    let href = "#"
-                    let target: string | undefined
-                    let rel: string | undefined
-
-                    switch (info.type) {
-                      case "phone":
-                        href = `tel:${info.value.replace(/[^+0-9]/g, "")}`
-                        break
-                      case "email":
-                        href = `mailto:${info.value}`
-                        break
-                      case "whatsapp":
-                        href = `https://wa.me/${info.value.replace(/[^0-9]/g, "")}`
-                        target = "_blank"
-                        rel = "noopener noreferrer"
-                        break
-                      case "telegram":
-                        href = `https://t.me/+${info.value.replace(/[^0-9]/g, "")}`
-                        target = "_blank"
-                        rel = "noopener noreferrer"
-                        break
-                    }
-
-                    return (
-                      <a
-                        key={index}
-                        href={href}
-                        target={target}
-                        rel={rel}
-                        className="flex items-center gap-4 rounded-lg p-4 transition-colors hover:bg-primary/10 no-underline"
-                      >
-                        <div
-                          className="flex h-12 w-12 items-center justify-center rounded-full text-primary-foreground"
-                          style={{ backgroundColor: "#69429a" }}
-                        >
-                          <info.icon className="h-5 w-5" />
-                        </div>
-                        <div className="flex flex-col">
-                          <h3 className="font-semibold text-foreground">{info.label}</h3>
-                          <p className="text-primary">{info.value}</p>
-                        </div>
-                      </a>
-                    )
-                  })}
-                </div>
+        <div className="container mx-auto px-4 grid gap-12 lg:grid-cols-2">
+          {/* FORM */}
+          <div className="rounded-xl bg-card p-6 shadow-sm md:p-8">
+            {isSubmitted ? (
+              <div className="text-center py-12">
+                <h3 className="text-xl font-bold">{t("messageSent")}</h3>
+                <Button
+                  className="mt-6 cursor-pointer"
+                  onClick={() => setIsSubmitted(false)}
+                >
+                  {t("sendAnother")}
+                </Button>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                {/* NAME */}
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="name">{t("name")}</Label>
+                  <Input
+                    id="name"
+                    value={name}
+                    onChange={handleNameChange}
+                    placeholder={t("name")}
+                    required
+                    className="cursor-pointer"
+                  />
+                </div>
 
-      {/* FAQ Section */}
-      <section className="border-t border-border bg-muted/30 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-foreground" style={{color:'#69429a'}}>{t("faq")}</h2>
-          <div className="mx-auto max-w-3xl space-y-6">
-            <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-2 font-bold text-card-foreground" style={{color:'#69429a'}}>{t("faqCustomDesign")}</h3>
-              <p className="text-muted-foreground">{t("faqCustomDesignAnswer")}</p>
-            </div>
-            <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-2 font-bold text-card-foreground" style={{color:'#69429a'}}>{t("faqOrderAdvance")}</h3>
-              <p className="text-muted-foreground">{t("faqOrderAdvanceAnswer")}</p>
-            </div>
-            <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-2 font-bold text-card-foreground" style={{color:'#69429a'}}>{t("faqDelivery")}</h3>
-              <p className="text-muted-foreground">{t("faqDeliveryAnswer")}</p>
-            </div>
-            <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-2 font-bold text-card-foreground" style={{color:'#69429a'}}>{t("faqSafe")}</h3>
-              <p className="text-muted-foreground">{t("faqSafeAnswer")}</p>
-            </div>
+                {/* PHONE */}
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="phone">{t("phone")}</Label>
+                  <Input
+                    id="phone"
+                    value={phone}
+                    onChange={handlePhoneChange}
+                    inputMode="numeric"
+                    placeholder={t('phone')}
+                    maxLength={9}
+                    required
+                    className="cursor-pointer"
+                  />
+                </div>
+
+                {/* MESSAGE */}
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="message">{t("message")}</Label>
+                  <Textarea
+                    id="message"
+                    rows={5}
+                    required
+                    className="cursor-pointer"
+                    placeholder={t("message")}
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="cursor-pointer"
+                  style={{ backgroundColor: "#69429a", color: "#fff" }}
+                >
+                  {isSubmitting ? t("sending") : t("sendMessage")}
+                </Button>
+              </form>
+            )}
+          </div>
+
+          {/* CONTACT LINKS */}
+          <div className="flex flex-col gap-6 rounded-xl bg-card p-6 shadow-sm md:p-8">
+            {[...contactInfo, ...socialLinks].map((info, i) => {
+              let href = "#"
+
+              if (info.type === "phone") href = `tel:${info.value}`
+              if (info.type === "whatsapp") href = `https://wa.me/374${info.value}`
+              if (info.type === "telegram") href = `https://t.me/+374${info.value}`
+
+              return (
+                <a
+                  key={i}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 cursor-pointer"
+                >
+                  <div
+                    className="h-12 w-12 flex items-center justify-center rounded-full text-white"
+                    style={{ backgroundColor: "#69429a" }}
+                  >
+                    <info.icon />
+                  </div>
+                  <div>
+                    <div className="font-semibold">{info.label}</div>
+                    <div className="text-primary">{info.value}</div>
+                  </div>
+                </a>
+              )
+            })}
           </div>
         </div>
       </section>
