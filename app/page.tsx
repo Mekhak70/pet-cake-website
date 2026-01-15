@@ -114,7 +114,7 @@ console.log(creamType, 'creamType');
               {t('choosemaincake')}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', justifyContent: 'center', alignItems: 'center', paddingTop: '4px' }}>
-              <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', alignItems: 'center' }} className="responsive-text">
                 <div className="responsive-text"  style={{ background: '#ef4f27', fontSize: '20px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '16px' }} onClick={() => setType(t('MEAT'))}><div style={{width:'100%', height:'100%', backgroundColor:type === t('MEAT') ? 'rgba(0,0,0,0.75)':'',  padding: type === t('MEAT') ? '8px 12px' :'10px 15px',  borderRadius: '16px'}}>{t('MEAT')}</div></div>
                 <div className="responsive-text"  style={{ background: '#f4a2c6', fontSize: '20px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '16px' }} onClick={() => setType(t('FRUIT'))}><div style={{width:'100%', height:'100%', backgroundColor:type === t('FRUIT') ? 'rgba(0,0,0,0.75)':'',  padding: type === t('FRUIT') ? '8px 12px' :'10px 15px',  borderRadius: '16px'}}>{t('FRUIT')}</div></div>
                 <div className="responsive-text"  style={{ background: '#aed137',  fontSize: '20px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '16px' }} onClick={() => setType(t('VEGETABLES'))}><div style={{width:'100%', height:'100%', backgroundColor:type === t('VEGETABLES') ? 'rgba(0,0,0,0.75)':'', padding: type === t('VEGETABLES') ? '8px 12px' :'10px 15px',  borderRadius: '16px'}}>{t('VEGETABLES')}</div></div>
@@ -125,7 +125,7 @@ console.log(creamType, 'creamType');
 
                {t('choosecream')}
               </p>
-              <div style={{ display: 'flex', gap: '15px' , justifyContent: 'center', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '15px' , justifyContent: 'center', alignItems: 'center' }} className="responsive-text">
                 <div className="responsive-text" style={{  background: '#1e439b', borderRadius: '16px', fontSize: '20px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setCreamType(t('DAIRY'))}><div style={{width:'100%', height:'100%', backgroundColor:creamType === t('DAIRY') ? 'rgba(0,0,0,0.75)':'', padding: creamType === t('DAIRY') ? '8px 12px' :'10px 15px',  borderRadius: '16px'}}>{t('DAIRY')}</div></div>
                 <div className="responsive-text"  style={{  background: '#72bfe9', borderRadius: '16px', fontSize: '20px', color: '#fff', whiteSpace: 'nowrap', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setCreamType(t('PLANTBASEDMILK'))}><div style={{width:'100%', height:'100%', backgroundColor:creamType === t('PLANTBASEDMILK') ? 'rgba(0,0,0,0.75)':'', padding: creamType === t('PLANTBASEDMILK') ? '8px 12px' :'10px 15px',  borderRadius: '16px'}}>{t('PLANTBASEDMILK')}</div></div>
                 <div className="responsive-text"  style={{ background: '#008042', borderRadius: '16px', fontSize: '20px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setCreamType(t('PLANTBASED'))}><div style={{width:'100%', height:'100%', backgroundColor:creamType === t('PLANTBASED') ? 'rgba(0,0,0,0.75)':'', padding: creamType === t('PLANTBASED') ? '8px 12px' :'10px 15px',  borderRadius: '16px'}}>{t('PLANTBASED')}</div></div>
@@ -209,8 +209,9 @@ console.log(creamType, 'creamType');
     <style jsx>{`
       @media (max-width: 450px) {
         .responsive-text {
-          font-size: 10px !important;
+          font-size: 14px !important;
           line-height: 1.2;
+          gap: 8px !important;
         }
       }
     `}</style>

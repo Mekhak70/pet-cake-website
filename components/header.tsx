@@ -11,7 +11,7 @@ import Logo from "@/public/logo.svg"
 import { usePathname } from "next/navigation"
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(true)
   const { t } = useLanguage()
   const pathname = usePathname()
 
