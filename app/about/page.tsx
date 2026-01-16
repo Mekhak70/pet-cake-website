@@ -5,8 +5,7 @@ import Link from "next/link"
 import { Heart, Award, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
-import { PRODUCTS } from "@/lib/products"
-
+import Shun from "@/public/shun.png"
 
 export default function AboutPage() {
   const { t } = useLanguage()
@@ -18,21 +17,111 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full" style={{ backgroundColor: '#f9f5ff' }}>
+      <div className=" flex items-center justify-center w-full" style={{ backgroundColor: 'rgb(105, 66, 154)' }}>
+        <video
+          src="/about.mov"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className=" w-full  object-cover h-[50vh]"
+
+        />
+      </div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/10 py-16 md:py-24">
+      <section className="bg-gradient-to-br from-primary/5" >
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl" style={{color: '#69429a'}}>
+            <h1 className=" text-4xl font-extrabold tracking-tight text-foreground md:text-5xl" style={{ color: '#69429a', padding: '50px 0' }}>
               {t("aboutTitle")}
             </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">{t("aboutText")}</p>
+
           </div>
+        </div>
+      </section>
+      <section style={{ padding: "0 200px" }}>
+        <div
+          style={{
+            width: '100%',
+            backgroundColor: 'rgba(0,0,0,0.03)', // <-- ճիշտ ֆորմատ
+            borderRadius: '60px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '56px 75px',
+            gap: '20px',
+            textAlign: 'center',
+            fontSize: '20px',
+            color: '#69429a',
+
+          }}
+        ><div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#69429a',
+        }}>
+            <span>Chupaboo–ն ստեղծվել է մի պարզ, բայց շատ կարևոր գաղափարի </span>
+            <span>շուրջ՝ սեր և հոգատարություն կենդանիների հանդեպ։</span>
+          </div>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontWeight: 'bold',
+          }}>
+            <span >Սա այն գաղափարն է, որը մեզ դրդեց ստեղծել մի բան,</span>
+            <span> որը միայն ուրախության մասին է:</span>
+          </div>
+
+          <Image src={Shun} alt="Shun" width={100} height={25} style={{ display: 'inline-block', marginLeft: '10px', marginBottom: '5px' }} />
+
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <span>Թե՛ տանը, թե՛ դրսում, մեր փոքրիկ ընկերները ունեն նույն սիրո և ուշադրության </span>
+            <span>կարիքը, որը նրանք մեզ տալիս են ամեն օր։ Հենց այդ պատճառով էլ ծնվեց</span>
+            <span>Chupaboo–ն՝ լրացնելու այդ բացը։</span>
+          </div>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <span>Մեր հոգատար թիմը պատրաստում է կենդանիների համար նախատեսված</span>
+            <span>տորթեր և համովիկներ՝ ամբողջությամբ բնական բաղադրիչներից, առանց</span>
+            <span>շաքարի և առանց հավելումների։</span>
+          </div>
+
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontWeight: 'bold',
+          }}>
+            <span>Մենք հավատում ենք, որ յուրաքանչյուր կենդանի արժանի է սիրո,</span>
+            <span> ուշադրության և ընտանիքի ջերմությանը։</span>
+          </div>
+
+        </div>
+      </section>
+      <section style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '70px 0 50px 0' }}>
+        <div style={{}}>
+
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div className="relative mx-auto aspect-square w-full max-w-md">
@@ -46,7 +135,7 @@ export default function AboutPage() {
               />
             </div>
             <div className="flex flex-col gap-6">
-              <h2 className="text-3xl font-bold text-foreground md:text-4xl" style={{color:'#69429a'}}>{t("ourStory")}</h2>
+              <h2 className="text-3xl font-bold text-foreground md:text-4xl" style={{ color: '#69429a' }}>{t("ourStory")}</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>{t("aboutDescription").split(/(?<=\.)\s+/)
                   .filter(sentence => sentence.trim() !== "")
@@ -54,13 +143,13 @@ export default function AboutPage() {
                     <p key={i}>{sentence.trim()}</p>
                   ))}</p>
               </div>
-              {/* <Button asChild className="w-fit bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              <Button asChild className="w-fit bg-secondary text-secondary-foreground hover:bg-secondary/90">
                 <Link href="/shop">{t("orderNow")}</Link>
-              </Button> */}
+              </Button>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats Section */}
       {/* <section className="border-y border-border bg-primary py-16">
@@ -80,25 +169,25 @@ export default function AboutPage() {
       </section> */}
 
       {/* Values Section */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-foreground md:text-4xl"  style={{color:'#69429a'}}>{t("ourValues")}</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold text-foreground md:text-4xl" style={{ color: '#69429a' }}>{t("ourValues")}</h2>
           <div className="grid gap-8 md:grid-cols-3">
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold text-card-foreground" style={{color:'#69429a'}}>{t("qualityFirst")}</h3>
+              <h3 className="mb-3 text-xl font-bold text-card-foreground" style={{ color: '#69429a' }}>{t("qualityFirst")}</h3>
               <p className="text-muted-foreground">{t("qualityFirstDesc")}</p>
             </div>
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold text-card-foreground" style={{color:'#69429a'}}>{t("madeWithLove")}</h3>
+              <h3 className="mb-3 text-xl font-bold text-card-foreground" style={{ color: '#69429a' }}>{t("madeWithLove")}</h3>
               <p className="text-muted-foreground">{t("madeWithLoveDesc")}</p>
             </div>
             <div className="rounded-xl bg-card p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold text-card-foreground" style={{color:'#69429a'}}>{t("petHappiness")}</h3>
+              <h3 className="mb-3 text-xl font-bold text-card-foreground" style={{ color: '#69429a' }}>{t("petHappiness")}</h3>
               <p className="text-muted-foreground">{t("petHappinessDesc")}</p>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

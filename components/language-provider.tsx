@@ -33,7 +33,7 @@ export const translations: Translations = {
   orderNow: { hy: "Պատվիրել հիմա", en: "Order Now", ru: "Заказать" },
 
   // About
-  aboutTitle: { hy: "Մեր մասին", en: "About Us", ru: "О нас" },
+  aboutTitle: { hy: "ՄԵՐ ՄԱՍԻՆ", en: "ABOUT US", ru: "О НАС" },
   aboutText: {
     hy: "Մեզ համար կենդանիները ընտանիքի անդամներ են։ Այդ իսկ պատճառով յուրաքանչյուր տորթ պատրաստում ենք մեծ սիրով ու ուշադրությամբ՝ մտածելով նրանց առողջության և ուրախության մասին։ Մեր տորթերը ոչ միայն համեղ են, այլև անվտանգ ու օգտակար ձեր չորքոտանի ընկերների համար։",
     en: "We are passionate bakers creating healthy and delicious cakes for pets. Every cake is handcrafted with love and the finest ingredients suitable for dogs and cats.",
@@ -61,11 +61,18 @@ export const translations: Translations = {
     en: "Looking for something special? We love creating custom cakes for birthdays, gotcha days, and other celebrations. Contact us to discuss your ideas!",
     ru: "Ищете что-то особенное? Мы с удовольствием создадим торт на заказ для дней рождения и других праздников.",
   },
-  contactUs: { hy: "Կապնվեք մեզ հետ", en: "Contact Us", ru: "Связаться" },
-
+  contactUs: { 
+    hy: "ԿԱՊՆՎԵՔ ՄԵԶ ՀԵՏ", 
+    en: "CONTACT US", 
+    ru: "СВЯЗАТЬСЯ" 
+  },
   // Contact
-  contactTitle: { hy: "Կապնվեք մեզ հետ", en: "Contact Us", ru: "Свяжитесь с нами" },
-  contactText: { hy: "Ունե՞ք հարցեր կամ անհատական պատվերներ։ Կապնվեք մեզ հետ։", en: "Have questions or custom orders? Get in touch!", ru: "Есть вопросы или индивидуальные заказы? Свяжитесь с нами!" },
+  contactTitle: { 
+    hy: "ԿԱՊՆՎԵՔ ՄԵԶ ՀԵՏ", 
+    en: "CONTACT US", 
+    ru: "СВЯЖИТЕСЬ С НАМИ" 
+  },
+    contactText: { hy: "Ունե՞ք հարցեր կամ անհատական պատվերներ։ Կապնվեք մեզ հետ։", en: "Have questions or custom orders? Get in touch!", ru: "Есть вопросы или индивидуальные заказы? Свяжитесь с нами!" },
   name: { hy: "Անուն", en: "Name", ru: "Имя" },
   email: { hy: "Էլ. հասցե", en: "Email", ru: "Эл. почта" },
   message: { hy: "Հաղորդագրություն", en: "Message", ru: "Сообщение" },

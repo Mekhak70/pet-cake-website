@@ -81,7 +81,7 @@ to-secondary/10
         <h1 className="text-4xl font-extrabold" style={{ color: "#69429a" }}>
           {t("contactTitle")}
         </h1>
-        <p className="mt-4 text-muted-foreground">{t("contactText")}</p>
+        <p className="mt-4 text-muted-foreground" style={{ color: "#69429a" }}>{t("contactText")}</p>
       </section>
 
       {/* CONTENT */}
