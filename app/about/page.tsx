@@ -179,7 +179,7 @@ export default function AboutPage() {
       font-size: 16px;
     }
   .happy-container {
-    gap: 7px;
+    gap: 1px;
     font-size: 8px;
   }
  .happy-container img {
