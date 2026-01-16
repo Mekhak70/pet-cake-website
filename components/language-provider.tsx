@@ -26,7 +26,7 @@ export const translations: Translations = {
     ru: "Вкусные торты для ваших любимых питомцев!",
   },
   heroSubtext: {
-    hy: "Շների համար անվտանգ, բնական բաղադրիչներով տորթեր՝ առանց շաքարի և հավելումների։",
+    hy: "Կենդանիների համար անվտանգ, բնական բաղադրիչներով տորթեր՝ առանց շաքարի և հավելումների։",
     en: "Treat your furry friends with our handmade, pet-safe cakes.",
     ru: "Порадуйте своих пушистых друзей нашими домашними тортами.",
   },
@@ -62,13 +62,13 @@ export const translations: Translations = {
     ru: "Ищете что-то особенное? Мы с удовольствием создадим торт на заказ для дней рождения и других праздников.",
   },
   contactUs: { 
-    hy: "ԿԱՊՆՎԵՔ ՄԵԶ ՀԵՏ", 
+    hy: "ԿԱՊ ՀԱՍՏԱՏԵՔ ՄԵԶ ՀԵՏ", 
     en: "CONTACT US", 
     ru: "СВЯЗАТЬСЯ" 
   },
   // Contact
   contactTitle: { 
-    hy: "ԿԱՊՆՎԵՔ ՄԵԶ ՀԵՏ", 
+    hy: "ԿԱՊ ՀԱՍՏԱՏԵՔ ՄԵԶ ՀԵՏ", 
     en: "CONTACT US", 
     ru: "СВЯЖИТЕСЬ С НАМИ" 
   },
@@ -143,7 +143,7 @@ export const translations: Translations = {
     ru: "НАШИ СЧАСТЛИВЫЕ ДРУЗЬЯ"
   },
   
-  contactText: { hy: "Ունե՞ք հարցեր կամ անհատական պատվերներ։ Կապնվեք մեզ հետ։", en: "Have questions or custom orders? Get in touch!", ru: "Есть вопросы или индивидуальные заказы? Свяжитесь с нами!" },
+  contactText: { hy: "Ունե՞ք հարցեր կամ անհատական պատվերներ։ Կապ հաստատեք մեզ հետ։", en: "Have questions or custom orders? Get in touch!", ru: "Есть вопросы или индивидуальные заказы? Свяжитесь с нами!" },
   name: { hy: "Անուն", en: "Name", ru: "Имя" },
   email: { hy: "Էլ. հասցե", en: "Email", ru: "Эл. почта" },
   message: { hy: "Հաղորդագրություն", en: "Message", ru: "Сообщение" },
@@ -223,7 +223,7 @@ export const translations: Translations = {
     en: "MEAT",
   },
   FRUIT: {
-    hy: "ՄՐԳ",
+    hy: "ՄԻՐԳ",
     ru: "ФРУКТЫ",
     en: "FRUIT",
   },
@@ -248,11 +248,6 @@ export const translations: Translations = {
     ru: "РАСТИТЕЛЬНЫЙ",
     en: "PLANT-BASED",
   },
-
-
-
-
-
 
   selected: {
     hy: "Ընտրված է",
