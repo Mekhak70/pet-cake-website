@@ -98,7 +98,7 @@ export const translations: Translations = {
     ru: "которое посвящено только радости."
   },  
   everywhereLoveAndCare: {
-    hy: "Թե՛ տանը, թե՛ դրսում, մեր փոքրիկ ընկերները ունեն նույն սիրո և ուշադրության։",
+    hy: "Թե՛ տանը, թե՛ դրսում, մեր փոքրիկ ընկերները ունեն նույն սիրո և ուշադրության",
     en: "Whether at home or outside, our little friends receive the same love and attention.",
     ru: "Будь то дома или на улице, наши маленькие друзья получают одинаковую любовь и внимание."
   }, 
