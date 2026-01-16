@@ -89,11 +89,11 @@ export default function AboutPage() {
       </section>
       <section className="happy-section-small">
         <div className="happy-container">
-          <Image src={Cake} alt="Cake" width={40} height={30} className="happy-img" />
+          <Image src={Cake} alt="Cake" width={25} height={22} className="happy-img" />
           <div className="happy-text">
             <span>ԵՐՋԱՆԻԿ ՀԱՃԱԽՈՐԴՆԵՐԸ</span>
           </div>
-          <Image src={Paw} alt="Paw" width={40} height={30} className="happy-img" />
+          <Image src={Paw} alt="Paw" width={23} height={22} className="happy-img" />
         </div>
       </section>
       <style jsx>{`
@@ -208,7 +208,7 @@ export default function AboutPage() {
           }
 
           .happy-img {
-            width: 35px; /* Պրոպորցիոնալ փոքրացում */
+            width: 25px; /* Պրոպորցիոնալ փոքրացում */
           }
           .big { display: none;}
           .happy-section-small {
