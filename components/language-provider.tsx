@@ -72,6 +72,12 @@ export const translations: Translations = {
     en: "CONTACT US", 
     ru: "СВЯЖИТЕСЬ С НАМИ" 
   },
+  CONTACTS: {
+    hy: "ԿԱՐԾԻՔՆԵՐ",
+    en: "CONTACTS",
+    ru: "КОНТАКТЫ"
+  },
+  
     contactText: { hy: "Ունե՞ք հարցեր կամ անհատական պատվերներ։ Կապնվեք մեզ հետ։", en: "Have questions or custom orders? Get in touch!", ru: "Есть вопросы или индивидуальные заказы? Свяжитесь с нами!" },
   name: { hy: "Անուն", en: "Name", ru: "Имя" },
   email: { hy: "Էլ. հասցե", en: "Email", ru: "Эл. почта" },

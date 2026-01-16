@@ -8,7 +8,11 @@ import { useLanguage } from "@/components/language-provider"
 import Shun from "@/public/shun.png"
 import Cake from "@/public/cake.png"
 import Paw from '@/public/paw.png'
-
+import PetSlider from "@/components/PetSlider"
+import Slider from "@/components/aboutSliter"
+import Letf from "@/public/sirtLeft.png"
+import Right from "@/public/sirtRight.png"
+import reviews from "@/public/reviews.png"
 export default function AboutPage() {
   const { t } = useLanguage()
 
@@ -33,7 +37,7 @@ export default function AboutPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5">
+      <section className="" >
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl" style={{ color: '#69429a', padding: '50px 0' }}>
@@ -96,6 +100,53 @@ export default function AboutPage() {
           <Image src={Paw} alt="Paw" width={23} height={22} className="happy-img" />
         </div>
       </section>
+
+      <section style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '52px', paddingTop: '35px' }}>
+        <Slider />
+
+      </section>
+
+      <section className="happy-section big">
+        <div className="happy-container">
+          <Image src={Letf} alt="Cake" width={35} className="happy-img" />
+          <div className="happy-text">
+            <span>{t('CONTACTS')}</span>
+          </div>
+          <Image src={Right} alt="Paw" width={40} className="happy-img" />
+        </div>
+      </section>
+      <section className="happy-section-small">
+        <div className="happy-container">
+          <Image src={Letf} alt="Cake" width={18} height={22} className="happy-img" />
+          <div className="happy-text">
+            <span>{t('CONTACTS')}</span>
+          </div>
+          <Image src={Right} alt="Paw" width={23} height={22} className="happy-img" />
+        </div>
+      </section>
+      <section
+  style={{ padding: '0 40px 50px 40px'}}
+>
+  <div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '52px',
+    // կողքերից 40px
+    backgroundImage: `url(${reviews.src})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'contain', // ամբողջ էջի չափով
+     // ամբողջ էկրանի բարձրությամբ
+     width: 'calc(100vw - 80px)',
+     height: '330px',
+  }}></div>
+</section>
+
+
+
+
+
       <style jsx>{`
         /* Chupaboo Section */
         .chupaboo-section {

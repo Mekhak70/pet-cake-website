@@ -6,30 +6,24 @@ export default function LoadingVideo({ onFinish }: { onFinish: () => void }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onFinish()
-    }, 5700)
+    }, 3000)
 
     return () => clearTimeout(timer)
   }, [onFinish])
 
   return (
-    <div
-  className="fixed inset-0 z-50 flex items-center justify-center"
-  style={{ backgroundColor: "#723f9e" }}
->
-  {/* Wrapper, որը պահպանում է նույն ֆոնը */}
-  <div className=" w-full h-[50%] flex items-center justify-center">
-   
-
-    
+  
+    <div className="w-screen h-screen relative overflow-hidden">
     <video
-      src="/loading.MP4"
+      src="/loading.mov"
       autoPlay
       muted
+      loop
       playsInline
-      className=" w-auto h-full"
+      className="absolute inset-0 w-full h-full object-cover"
     />
   </div>
-</div>
+  
 
   )
 }

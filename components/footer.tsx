@@ -6,6 +6,7 @@ import { useLanguage } from "@/components/language-provider"
 import Image from "next/image"
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa"
 import Logo from '@/public/logoWhit.svg'
+import chupaboooo from "@/public/chupaboooo.png"
 
 export function Footer() {
   const { t } = useLanguage()
@@ -19,6 +20,9 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border  text-primary-foreground" style={{ background: "#69429a" }}>
+      <section >
+  <Image src={chupaboooo} alt="Chupaboo" width={0} height={0} style={{ width: '100%', height: 'auto' }} />
+</section>
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand */}
