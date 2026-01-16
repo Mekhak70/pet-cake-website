@@ -136,10 +136,7 @@ export default function AboutPage() {
     flex-direction: row;
   }
 
-.happy-container img {
-  width: 40px;
-  height: 32px;
-}
+
 
 
   .happy-text {
@@ -182,7 +179,7 @@ export default function AboutPage() {
       font-size: 16px;
     }
   .happy-container {
-    gap: 10px;
+    gap: 7px;
     font-size: 8px;
   }
  .happy-container img {
