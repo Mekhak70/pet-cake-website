@@ -24,78 +24,68 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const images = [
-    { src: clent1},
-    { src: clent2},    
-    { src: clent3}, 
-    { src: clent4}, 
-    { src: clent5}, 
-    { src: clent6}, 
-    { src: clent7}, 
-    { src: clent8},
-    { src: clent9},
-    { src: clent10},
-    { src: clent11},
-    { src: clent12},
+  clent1, clent2, clent3, clent4, clent5, clent6,
+  clent7, clent8, clent9, clent10, clent11, clent12
 ];
 
 export default function Slider() {
-    const swiperRef = useRef<any>(null);
-    const [slidesPerView, setSlidesPerView] = useState<'auto' | 1>('auto');
+  const swiperRef = useRef<any>(null);
+  const [slidesPerView, setSlidesPerView] = useState<number>(4);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setSlidesPerView(window.innerWidth < 500 ? 1 : 'auto');
-        };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 500) setSlidesPerView(1);
+      else if (window.innerWidth < 1024) setSlidesPerView(2);
+      else setSlidesPerView(4);
+    };
 
-        handleResize(); // սկզբնական չափ
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-    return (
-        <div className="relative w-full flex justify-center items-center">
-            {/* Left Arrow */}
-            <div 
-                className="absolute left-[7%] top-1/2 -translate-y-1/2 z-20 cursor-pointer hidden sm:block"
-                onClick={() => swiperRef.current?.slidePrev()}
-            >
-                <Image src={Left} width={23} height={23} alt="Left" />
-            </div>
+  return (
+    <div className="relative w-full flex justify-center items-center">
+      {/* Left Arrow */}
+      <div 
+        className="absolute left-[7%] top-1/2 -translate-y-1/2 z-20 cursor-pointer hidden sm:block"
+        onClick={() => swiperRef.current?.slidePrev()}
+      >
+        <Image src={Left} width={23} height={23} alt="Left" />
+      </div>
 
-            {/* Swiper Wrapper */}
-            <div className="w-full max-w-[1200px] px-[35px] relative flex items-center" style={{cursor: 'pointer'}}>
-                <Swiper
-                    onSwiper={(swiper) => (swiperRef.current = swiper)}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    autoplay={{ delay: 2000, disableOnInteraction: false }}
-                    loop
-                    spaceBetween={23}
-                    slidesPerView={slidesPerView}
-                    className="relative"
-                >
-                    {images.map((img, i) => (
-                        <SwiperSlide
-                            key={i}
-                            style={{ width: '262px', height: '312px' }}
-                        >
-                            <div className="w-full h-full">
-                                <Image
-                                    src={img.src}
-                                    alt={`Slide ${i + 1}`}
-                                    className="w-full h-full rounded-[35px] object-contain"
-                                />
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
-            {/* Right Arrow */}
-            <div 
-                className="absolute right-[7%] top-1/2 -translate-y-1/2 z-20 cursor-pointer hidden sm:block"
-                onClick={() => swiperRef.current?.slideNext()}
-            >
-                <Image src={Right} width={23} height={23} alt="Right" />
-            </div>
-        </div>
-    );
+      {/* Swiper */}
+      <div className="w-full max-w-[1200px] px-[10px] flex items-center">
+        <Swiper
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          modules={[Autoplay, Pagination, Navigation]}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          loop
+          spaceBetween={16} // responsive spacing
+          slidesPerView={slidesPerView}
+        >
+          {images.map((src, i) => (
+            <SwiperSlide key={i}>
+              {/* Parent div միշտ rounded + overflow-hidden */}
+              <div className="w-full aspect-[262/312] rounded-[35px] overflow-hidden flex justify-center items-center">
+                <Image
+                  src={src}
+                  alt={`Slide ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Right Arrow */}
+      <div 
+        className="absolute right-[7%] top-1/2 -translate-y-1/2 z-20 cursor-pointer hidden sm:block"
+        onClick={() => swiperRef.current?.slideNext()}
+      >
+        <Image src={Right} width={23} height={23} alt="Right" />
+      </div>
+    </div>
+  );
 }

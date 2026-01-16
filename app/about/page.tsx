@@ -52,32 +52,32 @@ export default function AboutPage() {
       <section className="chupaboo-section">
         <div className="chupaboo-container">
           <div className="text-block">
-            <span>Chupaboo–ն ստեղծվել է մի պարզ, բայց շատ կարևոր գաղափարի </span>
-            <span>շուրջ՝ սեր և հոգատարություն կենդանիների հանդեպ։</span>
+            <span>{t('chupabooIdea')} </span>
+            <span>{t('loveAndCare')}</span>
           </div>
 
           <div className="text-block bold">
-            <span>Սա այն գաղափարն է, որը մեզ դրդեց ստեղծել մի բան,</span>
-            <span>որը միայն ուրախության մասին է:</span>
+            <span>{t('ideaThatInspiredUs')}</span>
+            <span>{t('joyOnly')}</span>
           </div>
 
           <Image src={Shun} alt="Shun" width={100} height={25} className="shun-image" />
 
           <div className="text-block">
-            <span>Թե՛ տանը, թե՛ դրսում, մեր փոքրիկ ընկերները ունեն նույն սիրո և ուշադրության </span>
-            <span>կարիքը, որը նրանք մեզ տալիս են ամեն օր։ Հենց այդ պատճառով էլ ծնվեց</span>
-            <span>Chupaboo–ն՝ լրացնելու այդ բացը։</span>
+            <span>{t('everywhereLoveAndCare')} </span>
+            <span>{t('dailyJoyAndBirth')}</span>
+            <span>{t('chupabooFillsTheGap')}</span>
           </div>
 
           <div className="text-block">
-            <span>Մեր հոգատար թիմը պատրաստում է կենդանիների համար նախատեսված</span>
-            <span>տորթեր և համովիկներ՝ ամբողջությամբ բնական բաղադրիչներից, առանց</span>
-            <span>շաքարի և առանց հավելումների։</span>
+            <span>{t('ourCaringTeam')}</span>
+            <span>{t('cakesAndTreats')}</span>
+            <span>{t('sugarAndAdditiveFree')}</span>
           </div>
 
           <div className="text-block bold">
-            <span>Մենք հավատում ենք, որ յուրաքանչյուր կենդանի արժանի է սիրո,</span>
-            <span> ուշադրության և ընտանիքի ջերմությանը։</span>
+            <span>{t('everyAnimalDeservesLove')}</span>
+            <span> {t('careAndWarmth')}</span>
           </div>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function AboutPage() {
         <div className="happy-container">
           <Image src={Cake} alt="Cake" width={70} height={56} className="happy-img" />
           <div className="happy-text">
-            <span>ԵՐՋԱՆԻԿ ՀԱՃԱԽՈՐԴՆԵՐԸ</span>
+          <span>{t('ourHappyFriends')}</span>
           </div>
           <Image src={Paw} alt="Paw" width={70} height={56} className="happy-img" />
         </div>
@@ -96,7 +96,7 @@ export default function AboutPage() {
         <div className="happy-container">
           <Image src={Cake} alt="Cake" width={25} height={22} className="happy-img" />
           <div className="happy-text">
-            <span>ԵՐՋԱՆԻԿ ՀԱՃԱԽՈՐԴՆԵՐԸ</span>
+            <span>{t('ourHappyFriends')}</span>
           </div>
           <Image src={Paw} alt="Paw" width={23} height={22} className="happy-img" />
         </div>
@@ -158,15 +158,10 @@ export default function AboutPage() {
             backgroundPosition: 'center',
             backgroundSize: 'contain',
             width: 'calc(100vw - 80px)',
-            height: '520px',
+            height: '300px',
           }}
         />
       </section>
-
-
-
-
-
 
       <style jsx>{`
         /* Chupaboo Section */

@@ -77,8 +77,73 @@ export const translations: Translations = {
     en: "CONTACTS",
     ru: "КОНТАКТЫ"
   },
+  chupabooIdea: {
+    hy: "Chupaboo–ն ստեղծվել է մի պարզ, բայց շատ կարևոր գաղափարի շուրջ",
+    en: "Chupaboo was created around a simple but very important idea",
+    ru: "Chupaboo был создан вокруг простой, но очень важной идеи"
+  },
+  loveAndCare: {
+    hy: "սեր և հոգատարություն կենդանիների հանդեպ։",
+    en: "love and care for animals.",
+    ru: "любовь и забота о животных."
+  },
+  ideaThatInspiredUs: {
+    hy: "Սա այն գաղափարն է, որը մեզ դրդեց ստեղծել մի բան,",
+    en: "This is the idea that inspired us to create something,",
+    ru: "Это та идея, которая вдохновила нас создать что-то,"
+  }, 
+  joyOnly: {
+    hy: "որը միայն ուրախության մասին է։",
+    en: "that is all about joy.",
+    ru: "которое посвящено только радости."
+  },  
+  everywhereLoveAndCare: {
+    hy: "Թե՛ տանը, թե՛ դրսում, մեր փոքրիկ ընկերները ունեն նույն սիրո և ուշադրության։",
+    en: "Whether at home or outside, our little friends receive the same love and attention.",
+    ru: "Будь то дома или на улице, наши маленькие друзья получают одинаковую любовь и внимание."
+  }, 
+  dailyJoyAndBirth: {
+    hy: "կարիքը, որը նրանք մեզ տալիս են ամեն օր։ Հենց այդ պատճառով էլ ծնվեց",
+    en: "the joy they give us every day. That’s why it was created",
+    ru: "радость, которую они дарят нам каждый день. Именно поэтому было создано"
+  },
+  chupabooFillsTheGap: {
+    hy: "Chupaboo–ն՝ լրացնելու այդ բացը։",
+    en: "Chupaboo-to fill that gap.",
+    ru: "Chupaboo-чтобы заполнить этот пробел."
+  },
+  ourCaringTeam: {
+    hy: "Մեր հոգատար թիմը պատրաստում է կենդանիների համար նախատեսված",
+    en: "Our caring team prepares products designed for animals",
+    ru: "Наша заботливая команда готовит продукты, предназначенные для животных"
+  },    
+  cakesAndTreats: {
+    hy: "տորթեր և համովիկներ՝ ամբողջությամբ բնական բաղադրիչներից, առանց",
+    en: "cakes and treats made entirely from natural ingredients, without",
+    ru: "торты и лакомства, полностью из натуральных ингредиентов, без"
+  },  
+  sugarAndAdditiveFree: {
+    hy: "շաքարի և առանց հավելումների։",
+    en: "sugar-free and additive-free.",
+    ru: "без сахара и без добавок."
+  },  
+  everyAnimalDeservesLove: {
+    hy: "Մենք հավատում ենք, որ յուրաքանչյուր կենդանի արժանի է սիրո,",
+    en: "We believe that every animal deserves love,",
+    ru: "Мы верим, что каждое животное заслуживает любви,"
+  },  
+  careAndWarmth: {
+    hy: "ուշադրության և ընտանիքի ջերմությանը։",
+    en: "care, and the warmth of a family.",
+    ru: "внимания и тепла семьи."
+  },  
+  ourHappyFriends: {
+    hy: "ՄԵՐ ԵՐՋԱՆԻԿ ԸՆԿԵՐՆԵՐԸ",
+    en: "OUR HAPPY FRIENDS",
+    ru: "НАШИ СЧАСТЛИВЫЕ ДРУЗЬЯ"
+  },
   
-    contactText: { hy: "Ունե՞ք հարցեր կամ անհատական պատվերներ։ Կապնվեք մեզ հետ։", en: "Have questions or custom orders? Get in touch!", ru: "Есть вопросы или индивидуальные заказы? Свяжитесь с нами!" },
+  contactText: { hy: "Ունե՞ք հարցեր կամ անհատական պատվերներ։ Կապնվեք մեզ հետ։", en: "Have questions or custom orders? Get in touch!", ru: "Есть вопросы или индивидуальные заказы? Свяжитесь с нами!" },
   name: { hy: "Անուն", en: "Name", ru: "Имя" },
   email: { hy: "Էլ. հասցե", en: "Email", ru: "Эл. почта" },
   message: { hy: "Հաղորդագրություն", en: "Message", ru: "Сообщение" },
