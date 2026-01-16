@@ -158,7 +158,7 @@ export default function AboutPage() {
             backgroundPosition: 'center',
             backgroundSize: 'contain',
             width: 'calc(100vw - 80px)',
-            height: '300px',
+            height: '400px',
           }}
         />
       </section>
