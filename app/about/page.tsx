@@ -13,6 +13,7 @@ import Slider from "@/components/aboutSliter"
 import Letf from "@/public/sirtLeft.png"
 import Right from "@/public/sirtRight.png"
 import reviews from "@/public/reviews.png"
+import reviewMobile from "@/public/reviewMobile.png"
 export default function AboutPage() {
   const { t } = useLanguage()
 
@@ -125,23 +126,43 @@ export default function AboutPage() {
         </div>
       </section>
       <section
-  style={{ padding: '0 40px 50px 40px'}}
->
-  <div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '52px',
-    // կողքերից 40px
-    backgroundImage: `url(${reviews.src})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'contain', // ամբողջ էջի չափով
-     // ամբողջ էկրանի բարձրությամբ
-     width: 'calc(100vw - 80px)',
-     height: '330px',
-  }}></div>
-</section>
+        className="reviews-desktop"
+        style={{ padding: '0 40px 50px 40px' }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundImage: `url(${reviews.src})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'contain',
+            width: 'calc(100vw - 80px)',
+            height: '330px',
+          }}
+        />
+      </section>
+
+      <section
+        className="reviews-mobile"
+        style={{ padding: '0 40px 50px 40px' }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundImage: `url(${reviewMobile.src})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'contain',
+            width: 'calc(100vw - 80px)',
+            height: '330px',
+          }}
+        />
+      </section>
+
 
 
 
@@ -269,6 +290,22 @@ export default function AboutPage() {
           padding: 49px 0 35px 0;
         }
         }
+        /* Default (Desktop) */
+.reviews-mobile {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .reviews-desktop {
+    display: none;
+  }
+
+  .reviews-mobile {
+    display: block;
+  }
+}
+
       `}</style>
     </div>
   )
