@@ -78,12 +78,11 @@ export default function Slider() {
                             key={i}
                             style={{ width: '262px', height: '312px' }}
                         >
-                            <div className="w-full h-full rounded-[35px] overflow-hidden">
+                            <div className="w-full h-full">
                                 <Image
                                     src={img.src}
                                     alt={`Slide ${i + 1}`}
-                                    className="w-full h-full object-contain"
-                                    style={{ borderRadius: '35px' }}
+                                    className="w-full h-full rounded-[35px] object-contain"
                                 />
                             </div>
                         </SwiperSlide>
