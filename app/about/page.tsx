@@ -6,6 +6,8 @@ import { Heart, Award, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
 import Shun from "@/public/shun.png"
+import Cake from "@/public/cake.png"
+import Paw from '@/public/paw.png'
 
 export default function AboutPage() {
   const { t } = useLanguage()
@@ -19,15 +21,15 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col w-full" style={{ backgroundColor: '#f9f5ff' }}>
       <div className=" flex items-center justify-center w-full" style={{ backgroundColor: 'rgb(105, 66, 154)' }}>
-        <video
-          src="/about.mov"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className=" w-full  object-cover h-[50vh]"
+      <video
+  src="/about.mov"
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="w-full object-cover h-[50vh] "
+/>
 
-        />
       </div>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/5" >
@@ -40,85 +42,162 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section style={{ padding: "0 200px" }}>
-        <div
-          style={{
-            width: '100%',
-            backgroundColor: 'rgba(0,0,0,0.03)', // <-- ճիշտ ֆորմատ
-            borderRadius: '60px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '56px 75px',
-            gap: '20px',
-            textAlign: 'center',
-            fontSize: '20px',
-            color: '#69429a',
+      <section className="chupaboo-section">
+  <div className="chupaboo-container">
+    <div className="text-block">
+      <span>Chupaboo–ն ստեղծվել է մի պարզ, բայց շատ կարևոր գաղափարի </span>
+      <span>շրջան՝ սեր և հոգատարություն կենդանիների հանդեպ։</span>
+    </div>
 
-          }}
-        ><div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#69429a',
-        }}>
-            <span>Chupaboo–ն ստեղծվել է մի պարզ, բայց շատ կարևոր գաղափարի </span>
-            <span>շուրջ՝ սեր և հոգատարություն կենդանիների հանդեպ։</span>
-          </div>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 'bold',
-          }}>
-            <span >Սա այն գաղափարն է, որը մեզ դրդեց ստեղծել մի բան,</span>
-            <span> որը միայն ուրախության մասին է:</span>
-          </div>
+    <div className="text-block bold">
+      <span>Սա այն գաղափարն է, որը մեզ դրդեց ստեղծել մի բան,</span>
+      <span>որը միայն ուրախության մասին է:</span>
+    </div>
 
-          <Image src={Shun} alt="Shun" width={100} height={25} style={{ display: 'inline-block', marginLeft: '10px', marginBottom: '5px' }} />
+    <Image src={Shun} alt="Shun" width={100} height={25} className="shun-image" />
 
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-            <span>Թե՛ տանը, թե՛ դրսում, մեր փոքրիկ ընկերները ունեն նույն սիրո և ուշադրության </span>
-            <span>կարիքը, որը նրանք մեզ տալիս են ամեն օր։ Հենց այդ պատճառով էլ ծնվեց</span>
-            <span>Chupaboo–ն՝ լրացնելու այդ բացը։</span>
-          </div>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-            <span>Մեր հոգատար թիմը պատրաստում է կենդանիների համար նախատեսված</span>
-            <span>տորթեր և համովիկներ՝ ամբողջությամբ բնական բաղադրիչներից, առանց</span>
-            <span>շաքարի և առանց հավելումների։</span>
-          </div>
+    <div className="text-block">
+      <span>Թե՛ տանը, թե՛ դրսում, մեր փոքրիկ ընկերները ունեն նույն սիրո և ուշադրության </span>
+      <span>կարիքը, որը նրանք մեզ տալիս են ամեն օր։ Հենց այդ պատճառով էլ ծնվեց</span>
+      <span>Chupaboo–ն՝ լրացնելու այդ բացը։</span>
+    </div>
 
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 'bold',
-          }}>
-            <span>Մենք հավատում ենք, որ յուրաքանչյուր կենդանի արժանի է սիրո,</span>
-            <span> ուշադրության և ընտանիքի ջերմությանը։</span>
-          </div>
+    <div className="text-block">
+      <span>Մեր հոգատար թիմը պատրաստում է կենդանիների համար նախատեսված</span>
+      <span>տորթեր և համովիկներ՝ ամբողջությամբ բնական բաղադրիչներից, առանց</span>
+      <span>շաքարի և առանց հավելումների։</span>
+    </div>
 
-        </div>
-      </section>
-      <section style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '70px 0 50px 0' }}>
-        <div style={{}}>
+    <div className="text-block bold">
+      <span>Մենք հավատում ենք, որ յուրաքանչյուր կենդանի արժանի է սիրո,</span>
+      <span> ուշադրության և ընտանիքի ջերմությանը։</span>
+    </div>
+  </div>
+</section>
 
-        </div>
-      </section>
+<section className="happy-section">
+  <div className="happy-container">
+    <Image src={Cake} alt="Cake" width={70} height={56} />
+    <div className="happy-text">
+      <span>CHUPABOO-Ի ԵՐՋԱՆԻԿ</span>
+      <span>ՀԱՃԱԽՈՐԴՆԵՐԸ</span>
+    </div>
+    <Image src={Paw} alt="Paw" width={70} height={56} />
+  </div>
+</section>
+
+<style jsx>{`
+  .chupaboo-section {
+    padding: 0 200px;
+  }
+
+  .chupaboo-container {
+    width: 100%;
+    background-color: rgba(0,0,0,0.03);
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 75px;
+    gap: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: #69429a;
+  }
+
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  /* Happy Section */
+  .happy-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 49px 0 35px 0;
+  }
+
+  .happy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17.5px;
+    font-size: 21px;
+    font-weight: bold;
+    color: #69429a;
+    flex-direction: row;
+  }
+
+.happy-container img {
+  width: 40px;
+  height: 32px;
+}
+
+
+  .happy-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.14em;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .chupaboo-section {
+      padding: 0 100px;
+    }
+    .chupaboo-container {
+      padding: 40px 50px;
+      font-size: 18px;
+    }
+    .happy-container {
+      gap: 12px;
+      font-size: 18px;
+    }
+    .happy-text {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .chupaboo-section {
+      padding: 0 20px;
+    }
+    .chupaboo-container {
+      padding: 30px 20px;
+      font-size: 16px;
+    }
+  .happy-container {
+    gap: 10px;
+    font-size: 8px;
+  }
+ .happy-container img {
+    width: 40px;
+    height: 32px;
+  }
+
+    .happy-text {
+      font-size: 1.2rem;
+     
+    }
+  }
+`}</style>
+
+
 
       {/* Story Section */}
       {/* <section className="py-16">
