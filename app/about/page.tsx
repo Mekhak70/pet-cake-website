@@ -53,7 +53,7 @@ export default function AboutPage() {
         <div className="chupaboo-container">
           <div className="text-block">
             <span>Chupaboo–ն ստեղծվել է մի պարզ, բայց շատ կարևոր գաղափարի </span>
-            <span>շրջան՝ սեր և հոգատարություն կենդանիների հանդեպ։</span>
+            <span>շուրջ՝ սեր և հոգատարություն կենդանիների հանդեպ։</span>
           </div>
 
           <div className="text-block bold">
@@ -158,7 +158,7 @@ export default function AboutPage() {
             backgroundPosition: 'center',
             backgroundSize: 'contain',
             width: 'calc(100vw - 80px)',
-            height: '330px',
+            height: '520px',
           }}
         />
       </section>
@@ -291,20 +291,20 @@ export default function AboutPage() {
         }
         }
         /* Default (Desktop) */
-.reviews-mobile {
-  display: none;
-}
+        .reviews-mobile {
+          display: none;
+        }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .reviews-desktop {
-    display: none;
-  }
+        /* Mobile */
+        @media (max-width: 768px) {
+          .reviews-desktop {
+            display: none;
+          }
 
-  .reviews-mobile {
-    display: block;
-  }
-}
+          .reviews-mobile {
+            display: block;
+          }
+        }
 
       `}</style>
     </div>

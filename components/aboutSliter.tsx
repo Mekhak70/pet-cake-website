@@ -82,7 +82,7 @@ export default function Slider() {
                                 <Image
                                     src={img.src}
                                     alt={`Slide ${i + 1}`}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-contain"
                                 />
                             </div>
                         </SwiperSlide>
