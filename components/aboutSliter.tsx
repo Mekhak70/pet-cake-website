@@ -83,6 +83,7 @@ export default function Slider() {
                                     src={img.src}
                                     alt={`Slide ${i + 1}`}
                                     className="w-full h-full object-contain"
+                                    style={{ borderRadius: '35px' }}
                                 />
                             </div>
                         </SwiperSlide>
